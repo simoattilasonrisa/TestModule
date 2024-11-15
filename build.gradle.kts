@@ -3,4 +3,15 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.compose) apply false
+    id("maven-publish")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenKotlin") {
+            groupId = "com.example"
+            artifactId = "lib"
+            version = "1.0.5"
+        }
+    }
 }
